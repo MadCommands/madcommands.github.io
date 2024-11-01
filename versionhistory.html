@@ -1,0 +1,491 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>MadCommands Version History</title>
+    <meta name="description"
+        content="MadCommands - Simple Programming for PocketMine (Minecraft Bedrock Edition) Servers">
+    <style type="text/css">
+        p,
+        form {
+            margin: 1em 0;
+            text-align: left;
+        }
+
+        body {
+            background: #000;
+            font-family: monospace;
+            padding: 0;
+            margin: 1em;
+            text-align: left;
+        }
+
+        .page {
+            margin: 0;
+        }
+
+        .footer {
+            margin-top: 4em;
+            font-size: 80%;
+        }
+
+        h1 img {
+            padding: 1em;
+            max-width: 90%;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .resp-holder {
+            max-width: 650px;
+            margin: 1em auto;
+            border: 1px solid #f2f2f2;
+        }
+
+        .resp-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%;
+        }
+
+        input.text {
+            background: #000000;
+            border: 1px solid #f2f2f2;
+            font-family: monospace;
+            padding: 0.5em;
+            width: 30em;
+        }
+
+        a:link,
+        a:visited,
+        a:active {
+            color: #ffff4f;
+            text-decoration: none
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        h2 {
+            margin: 2em auto 1em auto
+        }
+
+        h2,
+        .green {
+            color: #5bff53;
+        }
+
+        p,
+        .change,
+        .lightgrey {
+            color: #f2f2f2;
+        }
+
+        code,
+        .feature,
+        .yellow {
+            color: #ffff4f;
+        }
+
+        .white {
+            color: #ffffff;
+        }
+
+        h1,
+        input,
+        keyword,
+        .aqua {
+            color: #59ffff;
+        }
+
+        pre,
+        li,
+        .footer p,
+        .darkgrey {
+            color: #b1b1b1;
+        }
+
+        .red {
+            color: #cb2418;
+        }
+
+        .blue {
+            color: #3f0cd5;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="page">
+        <h1>
+            MadCommands Version History
+        </h1>
+        </ul>
+
+        <h2>
+            2.5.1
+        </h2>
+        <ul>
+            <li class="fix">Fix: <keyword>playerstatus</keyword> no longer throwing exception</li>
+        </ul>
+
+        <h2>
+            2.5
+        </h2>
+        <ul>
+            <li class="feature">Feature: Added <keyword>json</keyword> and <keyword>posturl</keyword> functions to
+                simplify integrations with external RESTful APIs</li>
+            <li class="feature">Feature: Added <keyword>playereffects</keyword> function returning player's currently
+                active effects</li>
+            <li class="change">Change: <keyword>playerstatus</keyword> now includes player's Xbox Live ID, speed and
+                motion vector</li>
+            <li class="change">Change: <keyword>playerstatus</keyword> now includes flying, sleeping, sprinting,
+                sneaking, and onfire flags</li>
+            <li class="change">Change: Player's level, position, and Xbox Live ID are now returned by <keyword>
+                    playerstatus</keyword> even for offline players</li>
+            <li class="change">Change: The <keyword>playerinventory</keyword> can now optionally include empty slots in
+                the result</li>
+            <li class="change">Change: The <keyword>in</keyword> and <keyword>notin</keyword> operators can now be used
+                to search for multiple values in a string in one command</li>
+            <li class="change">Change: Added <keyword>xuid</keyword> (Xbox Live user ID) to the list of values returned
+                by the <keyword>playerstatus</keyword> function for online players</li>
+            <li class="fix">Fix: <keyword>playerstatus</keyword> function now works for offline players as well, info
+                returned is limited to "online" and "op" flags</li>
+            <li class="fix">Fix: <keyword>boss</keyword> command updated to work with current version of PocketMine
+                again</li>
+            <li class="fix">Fix: <keyword>areainfo</keyword> funcion no longer failing when trying to get specific
+                whitelisted player's area flags</li>
+            <li class="fix">Fix: <keyword>cmd help</keyword> no longer throwing exception under PHP 8</li>
+            <li class="fix">Fix: help for the xp command no longer incorrectly mentions the move command instead</li>
+            <li class="fix">Fix: Typo in help for the <keyword>async</keyword> command</li>
+            <li class="fix">Fix: Exception thrown from external command executed with <keyword>asop</keyword> option
+                should no longer prevent the op permission from being reset</li>
+        </ul>
+
+        <h2>
+            2.4
+        </h2>
+        <ul>
+            <li class="feature">Feature: Added support for bitwise operators and math functions abs, pow, log, sin,
+                asin, cos, acos, tan, atan</li>
+            <li class="feature">Feature: Added onerror goto command to allow for custom handling of runtime errors</li>
+            <li class="feature">Feature: Added keys function to return list of keys of an associative array</li>
+            <li class="change">Change: drop command now supports items with NBT, such as custom name</li>
+            <li class="change">Change: /cmd insert now updates any literal goto commands targetting shifted line numbers
+            </li>
+            <li class="fix">Fix: boss title command now no longer causing exception</li>
+            <li class="fix">Fix: player death event no longer causing exception when last damage cause is unknown</li>
+        </ul>
+
+        <h2>
+            2.3.1
+        </h2>
+        <ul>
+            <li class="fix">Fix: Exception when sending entity sound effect sent to specific players</li>
+            <li class="fix">Fix: Invalid boss action now generates error instead of exception</li>
+            <li class="fix">Fix: Addressed issue with "undefined index" exception appearing when using the new "boss"
+                command</li>
+        </ul>
+
+        <h2>
+            2.3
+        </h2>
+        <ul>
+            <li class="feature">Feature: Support for boss bars using the boss command</li>
+            <li class="fix">Fix: areaname(&lt;playername&gt;) fixed</li>
+            <li class="fix">Fix: Subtracting arrays now works with multi-dimensional arrays as well</li>
+            <li class="fix">Fix: array() now correctly returns empty array instead of array containing an empty string
+            </li>
+            <li class="other">Other: MadCommands is now available for non-LEET servers</li>
+        </ul>
+
+        <h2>
+            2.2.1
+        </h2>
+        <ul>
+            <li class="change">Change: Error message contains more info when exception is catched</li>
+            <li class="fix">Fix: Replaced Exception with Throwable to catch both Exceptions and Errors</li>
+            <li class="fix">Fix: Plugin no longer crashes by checking if sender is online when sender is console</li>
+        </ul>
+
+        <h2>
+            2.2.0
+        </h2>
+        <ul>
+            <li class="feature">Feature: Added functions areaname and areainfo and command protect for managing
+                protected areas via LEET Land Protection</li>
+            <li class="feature">Feature: Added sort function to allow easy sorting of arrays</li>
+            <li class="feature">Feature: Added appear, disappear, and hit event triggers</li>
+            <li class="feature">Feature: Boss bar command - experimental, not controllable yet</li>
+            <li class="feature">Feature: Debug messages now can be redirected to a specified online player</li>
+            <li class="feature">Feature: Added sound command to produce game sounds on demand</li>
+            <li class="change">Change: lowercase and uppercase functions can now be applied to arrays</li>
+            <li class="change">Change: load and save commands now accept optional &lt;version&gt; parameter that can be
+                calculated in runtime</li>
+            <li class="fix">Fix: Typos in help</li>
+            <li class="fix">Fix: Plug-in no longer tries to dispatch command from a player who's no longer online</li>
+            <li class="fix">Fix: Added exception catching/handling to prevent most unhandled serious errors from
+                crashing the server</li>
+        </ul>
+
+        <h2>
+            2.1.6
+        </h2>
+        <ul>
+            <li class="change">Change: Default permission for /cmd kill is now op</li>
+            <li class="fix">Fix: Damage event trigger now works again (does not throw an exception)</li>
+        </ul>
+
+        <h2>
+            2.1.5
+        </h2>
+        <ul>
+            <li class="feature">Feature: Added /cmd kill all</li>
+            <li class="change">Change: Trying to send GUI dialog to a player fails if another dialog is waiting for
+                response from the same player</li>
+            <li class="change">Change: hud sample command now displays level name</li>
+            <li class="change">Change: Update for PMMP 3.0.0 (thx to spajk)</li>
+            <li class="fix">Fix: Unhandled GUI dialogs now get properly cleaned up when player leaves</li>
+            <li class="fix">Fix: move event triggers now work again with pmmp 3.0.0</li>
+            <li class="fix">Fix: popup now displays multiple lines of text again</li>
+        </ul>
+
+        <h2>
+            2.1.4
+        </h2>
+        <ul>
+            <li class="fix">Fix: Level name is now correctly taken from level's folder name</li>
+        </ul>
+
+        <h2>
+            2.1.3
+        </h2>
+        <ul>
+            <li class="feature">Feature: Added "animate" sample command</li>
+            <li class="fix">Fix: Setting array variable with invalid index no longer throws an exception</li>
+            <li class="fix">Fix: API version 3.0.0-ALPHA12 now accepted</li>
+        </ul>
+
+        <h2>
+            2.1.2
+        </h2>
+        <ul>
+            <li class="fix">Fix: Comparison with %false% or %true% now only succeeds when the compared variable is also
+                boolean</li>
+            <li class="fix">Fix: Compatibility with 1.2.13 (replaced direct property accesses with accessor methods)
+            </li>
+            <li class="fix">Fix: Undefined index exception when receiving duplicate form response packet</li>
+        </ul>
+
+        <h2>
+            2.1.1
+        </h2>
+        <ul>
+            <li class="fix">Fix: Fixed move event trigger to run assigned commadn when entering or leaving named area
+            </li>
+        </ul>
+
+        <h2>
+            2.1
+        </h2>
+        <ul>
+            <li class="feature">Feature: Triggers for move from/to area can be also defined using LeetProtector area
+                name</li>
+            <li class="feature">Feature: Added move from/to triggers with support for specifying area bounds by
+                coordinates</li>
+            <li class="feature">Feature: Added triggers for startup and shutdown events</li>
+            <li class="feature">Feature: Added the counter sample command</li>
+            <li class="feature">Feature: Added /cmd running and /cmd kill to allow listing and killing long-running
+                commands</li>
+            <li class="feature">Feature. Added /counter sample command to make testing /cmd running and /cmd kill easier
+            </li>
+            <li class="change">Change: Updated for MCPE 1.2.10 and API 3.0.0-ALPHA11</li>
+            <li class="fix">Fix: Named area handling in the move triggers</li>
+        </ul>
+
+        <h2>
+            2.0.2
+        </h2>
+        <ul>
+            <li class="feature">Feature: Chatbot sample command</li>
+            <li class="fix">Fix: Dialogs dismissed without submitting any response now correctly return boolean false
+            </li>
+            <li class="fix">Fix: Command created with MadCommands can no longer be renamed to empty string</li>
+            <li class="fix">Fix: size(string) now correctly returns string length instead of 1</li>
+            <li class="fix">Fix: Operators >= and <= were not always correctly recognized</li>
+        </ul>
+
+        <h2>
+            2.0.1
+        </h2>
+        <ul>
+            <li class="feature">Feature: Added xptrigger and toggle sample procedures that can be used as triggers</li>
+            <li class="change">Change: Boolean values now can be used in math expressions - false automatically casts to
+                0, true to 1</li>
+            <li class="fix">Fix: Using sleep in async mode does not and up in an endless loop any more</li>
+            <li class="fix">Fix: Trying to display collected error messages when exiting async mode does no longer crash
+                server</li>
+            <li class="fix">Fix: Trying to zip commands and variables during plugin shutdown no longer crashes server
+                when the variables folder exists but does not contain any saved variable</li>
+            <li class="fix">Fix: Loading non-existing variable now correctly unsets the variable, so the varset function
+                returns false</li>
+            <li class="fix">Fix: The playerarmor function and wear command now work with the latest PMMP</li>
+        </ul>
+
+        <h2>
+            2.0
+        </h2>
+        <ul>
+            <li class="feature">Feature: Added possibility to create and edit commands via GUI dialogs</li>
+            <li class="feature">Feature: Added "dialog" function to allow interacting with players via GUI dialogs</li>
+            <li class="feature">Feature: Added "dialogsdemo" sample command procedure</li>
+            <li class="feature">Feature: Added %true% and %false% reserved variables to simplify working with boolean
+                values</li>
+            <li class="feature">Feature: Added functions: lowercase, uppercase, substring, position, replace</li>
+            <li class="feature">Feature: Added "playergroup" function to check PurePerms group of specific player</li>
+            <li class="feature">Feature: Added "treat" command to set player's condition, including health, food,
+                saturation, and exhaustion</li>
+            <li class="feature">Feature: Added support for getting and setting player's experience</li>
+            <li class="feature">Feature: Added "chat" event trigger</li>
+            <li class="feature">Feature: Added "touch" event trigger</li>
+            <li class="feature">Feature: Added support for >= and <= operators</li>
+            <li class="feature">Feature: Added ability to truly unregister commands without having to restart server
+            </li>
+            <li class="change">Change: Multiple lines at once can now be deleted from a command procedure using a single
+                /cmd delete command</li>
+            <li class="change">Change: Made the let command implicit. You can simply omit it.</li>
+            <li class="change">Change: Subtracting flat array from flat array now produces valid flat array</li>
+            <li class="change">Change: Subtracting an array from an associative array now removes only elements with
+                both key and value matching</li>
+            <li class="change">Change: Unregistered and disabled comnands are now visually differentiated in the command
+                list</li>
+            <li class="fix">Fix: Automated conversion of associative array to string sometimes displaying the array as
+                flat</li>
+            <li class="fix">Fix: The let command is now able to assign value to zero-indexed array element</li>
+        </ul>
+
+        <h2>
+            1.2.4
+        </h2>
+        <ul>
+            <li class="fix">Fix: The if-then construct now correctly recognizes game commands</li>
+        </ul>
+
+        <h2>
+            1.2.3
+        </h2>
+        <ul>
+            <li class="fix">Fixed missing $reset_defaults when config is newer than plugin</li>
+            <li class="fix">Fixed inappropriate attempt to access plugin object from within async task</li>
+        </ul>
+
+        <h2>
+            1.2.2
+        </h2>
+        <ul>
+            <li class="change">Change: Updated hotbar handling to match the new PocketMine version for MCPE 1.2</li>
+            <li class="fix">Fixed GetPlayer method to throw error when player does not exist</li>
+            <li class="fix">Fixed all Get methods to stay on current procedure line when throwing error from within
+                function</li>
+        </ul>
+
+        <h2>
+            1.2.1
+        </h2>
+        <ul>
+            <li class="change">Change: Added possibility to reply back to RCON as long as the initiating
+                RemoteConsoleCommandSender still exists</li>
+            <li class="change">Change: Updated for the released MCPE 1.2</li>
+            <li class="fix">Fixed onlineplayers() crashing server</li>
+            <li class="fix">Fixed help for break trigger to reflect its functionality properly</li>
+            <li class="fix">Fixed undocumented backup and restore subcommands</li>
+        </ul>
+
+        <h2>
+            1.2.0
+        </h2>
+        <ul>
+            <li class="change">Change: Added food, saturation, and exhaustion to getplayerstatus function</li>
+            <li class="fix">Fixed block command to survive when called for bed without second block coordinates</li>
+        </ul>
+
+        <h2>
+            1.1.1
+        </h2>
+        <ul>
+            <li class="change">Change: Added permission checking to the newly added subcommands</li>
+            <li class="fix">Fixed eat, break, and place triggers</li>
+            <li class="fix">Fixed syntax errors</li>
+        </ul>
+
+        <h2>
+            1.1.0
+        </h2>
+        <ul>
+            <li class="feature">Feature: Added "drop" command</li>
+            <li class="feature">Feature: Added "dropitem" sample command</li>
+            <li class="feature">Feature: Added playerbalance function</li>
+            <li class="change">Change: Plugin data folder is now automatically created on initialization when it does
+                not exit</li>
+            <li class="change">Change: Made <keyword>let %varname%[%index%] = value</keyword> able to override an
+                already existing non-array variable %varname%</li>
+            <li class="change">Change: Added option to force certain config values to be reset to defaults when updating
+                from previous version</li>
+            <li class="fix">Fixed playerbalance</li>
+            <li class="fix">Fixed crashing when trying to set non-existing array variable</li>
+        </ul>
+
+        <h2>
+            1.0.3
+        </h2>
+        <ul>
+            <li class="fix">Fixed nbt handling when getting and setting inventory holder contents</li>
+        </ul>
+
+        <h2>
+            1.0.2
+        </h2>
+        <ul>
+            <li class="feature">Feature: Added reserved-commands config option to prevent overriding selected commands
+            </li>
+            <li class="feature">Feature: Default set of reserved commands is: cmd, login, logout, register</li>
+            <li class="feature">Feature: Added switchworld sample command</li>
+            <li class="change">Changed "nbt" index to "nbt_hex" to match new PocketMine version</li>
+            <li class="fix">Fixed "move" command to work properly with multiple worlds</li>
+        </ul>
+
+        <h2>
+            1.0.1
+        </h2>
+        <ul>
+            <li class="feature">Feature: Added html version of complete help</li>
+            <li class="feature">Feature: Updated for API 3.0.0-ALPHA7</li>
+            <li class="fix">Fixed crash when using schedule or sleep</li>
+        </ul>
+
+        <h2>
+            1.0
+        </h2>
+        <ul>
+            <li class="other">Initial release for LEET servers</li>
+
+
+    </section>
+    <section class="footer">
+        <p>
+            &copy; 2019-
+            <script language="JavaScript">var d = new Date(); document.write(d.getFullYear());</script> <span
+                class="green">madhon</span>. All rights reserved.
+        </p>
+    </section>
+</body>
+
+</html>
